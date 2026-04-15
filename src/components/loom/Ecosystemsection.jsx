@@ -25,30 +25,7 @@ const features = [
     description:
       "A centralized library that combines firm methodologies, templates, and insights with global frameworks, regulations, and best practices.",
   },
-  {
-    icon: Workflow,
-    iconBg: "#1e3a2f",
-    iconColor: "#34d399",
-    title: "Workflow Automation",
-    description:
-      "Automate repetitive audit tasks and approvals, freeing your team to focus on high-value analysis and client delivery.",
-  },
-  {
-    icon: ShieldCheck,
-    iconBg: "#3b2f3a",
-    iconColor: "#f472b6",
-    title: "Risk Intelligence",
-    description:
-      "Continuously monitor risk signals across your audit universe with AI-powered alerts and prioritisation engines.",
-  },
-  {
-    icon: BarChart2,
-    iconBg: "#1e2e4a",
-    iconColor: "#60a5fa",
-    title: "Performance Analytics",
-    description:
-      "Track team productivity, audit cycle times, and finding trends with real-time dashboards built for audit leadership.",
-  },
+  
 ];
 
 export default function EcosystemSection() {

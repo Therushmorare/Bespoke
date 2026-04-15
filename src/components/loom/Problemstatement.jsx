@@ -80,7 +80,7 @@ export default function ProblemStatement() {
                   <ul className="flex flex-col gap-1.5 m-0 p-0 list-none">
                     {bullets.map((b) => (
                       <li key={b} className="text-white/50 text-sm leading-relaxed flex items-start gap-2">
-                        <span className="text-white/20 mt-1 flex-shrink-0">—</span>
+                        <span className="text-white/20 mt-1 flex-shrink-0"></span>
                         {b}
                       </li>
                     ))}

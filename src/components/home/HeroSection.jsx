@@ -25,7 +25,7 @@ export default function HeroSection() {
       speed: 0.003 + Math.random() * 0.002,
       width: 1 + Math.random() * 2.5,
       color: i % 3 === 0 ? "#f472b6" : i % 3 === 1 ? "#7dd3fc" : "#c084fc",
-      alpha: 0.4 + Math.random() * 0.5,
+      alpha: 0.2 + Math.random() * 0.25,
       amp: 60 + Math.random() * 120,
       freq: 0.5 + Math.random() * 1.5,
       yBase: (i / 28) * 1.4 - 0.2,
@@ -42,7 +42,7 @@ export default function HeroSection() {
 
       const vignette = ctx.createRadialGradient(W / 2, H / 2, H * 0.1, W / 2, H / 2, H * 0.9);
       vignette.addColorStop(0, "rgba(0,0,0,0)");
-      vignette.addColorStop(1, "rgba(0,0,0,0.55)");
+      vignette.addColorStop(1, "rgba(0,0,0,0.72)");
       ctx.fillStyle = vignette;
       ctx.fillRect(0, 0, W, H);
 
@@ -105,17 +105,25 @@ export default function HeroSection() {
           backgroundSize: "200px 200px",
         }}
       />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(10,10,28,0.65) 0%, transparent 100%)",
+        }}
+      />
 
       <div className="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-4xl mx-auto pt-[68px]">
 
         <p
           className="text-[10px] tracking-[0.35em] uppercase mb-4 font-bold"
-          style={{ color: "#a78bfa" }}
+          style={{ color: "#c4b5fd" }}
         >
           Established 2025
         </p>
 
-        <h1
+         <h1
           className="font-bold leading-[1.05] mb-8 w-full"
           style={{
             fontSize: "clamp(2.75rem, 6vw, 5rem)",
@@ -131,7 +139,8 @@ export default function HeroSection() {
 
         <p
           className="text-base md:text-lg max-w-xl mb-12 leading-relaxed"
-          style={{ color: "rgba(255,255,255,0.55)" }}
+          
+          style={{ color: "rgba(255,255,255,0.82)" }}
         >
           Bespoke Solutech operates and manages digital products and services for businesses and
           organisations requiring professional-grade support.
@@ -140,16 +149,21 @@ export default function HeroSection() {
         <div className="flex flex-wrap gap-4 justify-center">
           <a
             href="#consultation"
-            className="px-8 bg-violet-600 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95"
-            style={{  color: "#ffffff", textDecoration: "none", display: "inline-block" }}
+            className="px-8 bg-violet-600 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-violet-500 active:scale-95"
+            style={{ color: "#ffffff", textDecoration: "none", display: "inline-block" }}
             aria-label="Request a consultation with Bespoke Solutech"
           >
             Request Consultation
           </a>
           <a
             href="#products"
-            className="px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 active:scale-95"
-            style={{ border: "1.5px solid rgba(255,255,255,0.35)", color: "#ffffff", textDecoration: "none", display: "inline-block" }}
+            className="px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-white/10 active:scale-95"
+            style={{
+              border: "1.5px solid rgba(255,255,255,0.60)",
+              color: "#ffffff",
+              textDecoration: "none",
+              display: "inline-block",
+            }}
             aria-label="Explore Bespoke Solutech's digital solutions"
           >
             Explore Our Solutions

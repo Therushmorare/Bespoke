@@ -18,9 +18,11 @@ export default function LoomHero() {
     }));
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = canvas.offsetWidth * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
+      // Reset any previous transforms before scaling, otherwise scale() compounds
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
     window.addEventListener("resize", resize);
@@ -88,7 +90,7 @@ export default function LoomHero() {
           className="font-bold font-serif leading-tight m-0"
           style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)", letterSpacing: "-0.02em" }}
         >
-          <span className="text-white">Loom AI Unlocks </span>
+          <span className="text-white">Looom AI Unlocks </span>
           <span className="text-violet-400">Audit</span>
           <br />
           <span className="text-violet-400">Intelligence</span>

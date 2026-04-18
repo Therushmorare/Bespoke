@@ -48,7 +48,7 @@ export default function EcosystemSection() {
             style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)" }}
           >
             <span className="text-white">Why choose </span>
-            <span className="text-violet-400">Loom AI</span>
+            <span className="text-violet-400">Looom AI</span>
             <span className="text-white">?</span>
           </h2>
         </div>

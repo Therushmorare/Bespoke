@@ -2,40 +2,47 @@ import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
   const canvasRef = useRef(null);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const section = sectionRef.current;
+    if (!canvas || !section) return;
+    const ctx = canvas.getContext("2d", { alpha: false }); 
 
     let animFrameId;
     let t = 0;
+    let isVisible = true;
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      canvas.width = canvas.offsetWidth * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
     resize();
     window.addEventListener("resize", resize);
 
-    const streamLines = Array.from({ length: 28 }, (_, i) => ({
-      offset: (i / 28) * Math.PI * 2,
+    const streamLines = Array.from({ length: 20 }, (_, i) => ({
+      offset: (i / 20) * Math.PI * 2,
       speed: 0.003 + Math.random() * 0.002,
       width: 1 + Math.random() * 2.5,
       color: i % 3 === 0 ? "#f472b6" : i % 3 === 1 ? "#7dd3fc" : "#c084fc",
       alpha: 0.2 + Math.random() * 0.25,
       amp: 60 + Math.random() * 120,
       freq: 0.5 + Math.random() * 1.5,
-      yBase: (i / 28) * 1.4 - 0.2,
+      yBase: (i / 20) * 1.4 - 0.2,
     }));
 
     const draw = () => {
+      if (!isVisible) {
+        animFrameId = requestAnimationFrame(draw);
+        return;
+      }
+
       const W = canvas.offsetWidth;
       const H = canvas.offsetHeight;
-
-      ctx.clearRect(0, 0, W, H);
 
       ctx.fillStyle = "#1a1a2e";
       ctx.fillRect(0, 0, W, H);
@@ -51,10 +58,8 @@ export default function HeroSection() {
         ctx.strokeStyle = line.color;
         ctx.globalAlpha = line.alpha;
         ctx.lineWidth = line.width;
-        ctx.shadowColor = line.color;
-        ctx.shadowBlur = 8;
 
-        for (let x = -20; x <= W + 20; x += 2) {
+        for (let x = -20; x <= W + 20; x += 3) {
           const progress = x / W;
           const phase = t * line.speed + line.offset;
           const y =
@@ -67,34 +72,47 @@ export default function HeroSection() {
         }
 
         ctx.stroke();
-        ctx.shadowBlur = 0;
         ctx.globalAlpha = 1;
       });
 
       t++;
       animFrameId = requestAnimationFrame(draw);
     };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(section);
 
     draw();
 
     return () => {
       cancelAnimationFrame(animFrameId);
       window.removeEventListener("resize", resize);
+      observer.disconnect();
     };
   }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="home"
       aria-label="Hero — Bespoke Solutech"
       className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: "#111120" }}
+      style={{ background: "#1a1a2e" }}
     >
       <canvas
         ref={canvasRef}
         aria-hidden="true"
         className="absolute inset-0 w-full h-full"
-        style={{ display: "block" }}
+        style={{
+          display: "block",
+          background: "#1a1a2e",
+          willChange: "transform", 
+          transform: "translateZ(0)", 
+        }}
       />
 
       <div
@@ -139,7 +157,6 @@ export default function HeroSection() {
 
         <p
           className="text-base md:text-lg max-w-xl mb-12 leading-relaxed"
-          
           style={{ color: "rgba(255,255,255,0.82)" }}
         >
           Bespoke Solutech operates and manages digital products and services for businesses and

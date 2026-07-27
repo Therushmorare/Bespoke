@@ -121,10 +121,6 @@ export default function HeroSection() {
 
       <div className="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-4xl mx-auto pt-[68px]">
 
-        <p className="text-[10px] tracking-[0.35em] uppercase mb-4 font-bold text-[#c4b5fd]">
-          Established 2025
-        </p>
-
         <h1
           className="font-bold leading-[1.05] mb-8 w-full text-[clamp(2.75rem,6vw,5rem)] [-letter-spacing:0.02em]"
         >

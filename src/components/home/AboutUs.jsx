@@ -1,7 +1,6 @@
 import { Target, Eye, ArrowUpRight } from "lucide-react";
 
 const stats = [
-  { value: "2025", label: "Established" },
   { value: "ZA", label: "South African Built" },
 ];
 

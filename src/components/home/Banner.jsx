@@ -8,8 +8,8 @@ const pillars = [
   { icon: BarChart2,   label: "Asset Register" },
 ];
 
-// Duplicate for seamless infinite scroll
-const track = [...pillars, ...pillars];
+//infinite scroll
+const track = [...pillars, ...pillars, ...pillars, ...pillars];
 
 export default function Banner() {
   return (

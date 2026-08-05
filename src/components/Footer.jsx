@@ -22,7 +22,7 @@ const contactLinks = [
 
 const offices = [
   {
-    label: "Main Office",
+    label: "Waterfall Chartered Accountants Chambers Offices",
     lines: [
       "Allandale Building, Office C, First Floor",
       "23 Magwa Crescent",
@@ -31,7 +31,7 @@ const offices = [
     ],
   },
   {
-    label: "Second Office",
+    label: "Bespoke Solutech",
     lines: [
       "Unit H22, Workpods, 1024 Brand Road",
       "President Park AH",

@@ -4,7 +4,7 @@ import { MapPin, Clock, Navigation } from "lucide-react";
 const offices = [
   {
     id: "main",
-    label: "Main Office",
+    label: "Waterfall Chartered Accountants Chambers Offices",
     lines: [
       "Allandale Building, Office C, First Floor",
       "23 Magwa Crescent",
@@ -16,7 +16,7 @@ const offices = [
   },
   {
     id: "second",
-    label: "Second Office",
+    label: "Bespoke Solutech",
     lines: [
       "Unit H22, Workpods, 1024 Brand Road",
       "President Park AH",

@@ -2,7 +2,6 @@ import { ShieldCheck, Zap, Globe, Clock, Lock, BarChart2 } from "lucide-react";
 
 const pillars = [
   { icon: ShieldCheck, label: "Loom Ai" },
-  { icon: Zap,         label: "Propsho" },
   { icon: Globe,       label: "Hitari" },
   { icon: Clock,       label: "ESG" },
   { icon: Lock,        label: "E-Recruitement" },

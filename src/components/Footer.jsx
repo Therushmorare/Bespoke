@@ -17,7 +17,28 @@ const legalLinks = [
 const contactLinks = [
   { icon: Mail,  label: "sales@bespokesolutech.co.za", href: "mailto:sales@bespokesolutech.co.za" },
   { icon: Phone, label: "010 880 7341",                href: "tel:+27108807341" },
-  { icon: MapPin,label: "Midrand, South Africa",       href: null },
+  { icon: MapPin,label: "Waterfall City & Midrand, SA", href: null },
+];
+
+const offices = [
+  {
+    label: "Main Office",
+    lines: [
+      "Allandale Building, Office C, First Floor",
+      "23 Magwa Crescent",
+      "Waterfall City, 2090",
+      "Gauteng, South Africa",
+    ],
+  },
+  {
+    label: "Second Office",
+    lines: [
+      "Unit H22, Workpods, 1024 Brand Road",
+      "President Park AH",
+      "Midrand, 1686",
+      "Gauteng, South Africa",
+    ],
+  },
 ];
 
 const socials = [
@@ -77,7 +98,7 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-6">
 
         {/* Main grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr_1fr_1fr] gap-12 py-16 border-b border-white/[0.06]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr_1fr_1.2fr] gap-12 py-16 border-b border-white/[0.06]">
 
           {/* Brand column */}
           <div className="flex flex-col gap-6">
@@ -161,22 +182,23 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Office */}
-          <address aria-label="Office address" className="not-italic">
+          {/* Offices */}
+          <address aria-label="Office addresses" className="not-italic">
             <p className="text-white/35 text-[11px] font-bold tracking-[0.2em] uppercase m-0 mb-5">
-              Office
+              Offices
             </p>
-            <div className="flex flex-col gap-1.5 mb-5">
-              {[
-                "Unit H22, Workpods",
-                "1024 Brand Road",
-                "President Park AH",
-                "Midrand, 1686",
-                "South Africa",
-              ].map((line) => (
-                <p key={line} className="text-white/60 text-sm m-0 leading-relaxed">
-                  {line}
-                </p>
+            <div className="flex flex-col gap-5">
+              {offices.map(({ label, lines }) => (
+                <div key={label} className="flex flex-col gap-1.5">
+                  <span className="text-violet-400/80 text-[11px] font-semibold tracking-[0.1em] uppercase">
+                    {label}
+                  </span>
+                  {lines.map((line) => (
+                    <p key={line} className="text-white/60 text-sm m-0 leading-relaxed">
+                      {line}
+                    </p>
+                  ))}
+                </div>
               ))}
             </div>
           </address>

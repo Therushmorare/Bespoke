@@ -12,7 +12,6 @@ export default function CTASection() {
       aria-labelledby="cta-heading"
       className="relative bg-[#0E0E13] px-6 py-24 lg:py-32 overflow-hidden"
     >
-      {/* Ambient glow — mirrors WhyChooseUs / AboutUs */}
       <div
         aria-hidden="true"
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-violet-700/10 blur-[120px] pointer-events-none"
@@ -21,7 +20,7 @@ export default function CTASection() {
       <div className="relative max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-end">
 
-          {/* Left — heading + copy */}
+          {/* Left: heading + copy */}
           <div className="flex flex-col gap-6 max-w-2xl">
             <p className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase m-0">
               Let's Work Together
@@ -40,7 +39,7 @@ export default function CTASection() {
 
             <p className="text-white/60 text-base leading-relaxed m-0">
               Reach out and our team will put together a consultation tailored to your
-              business — no generic pitches, no unnecessary overhead.
+              business, no generic pitches, no unnecessary overhead.
             </p>
 
             {/* Quick contact */}
@@ -59,7 +58,7 @@ export default function CTASection() {
             </ul>
           </div>
 
-          {/* Right — action card */}
+          {/* Right: action card */}
           <div className="bg-[#16151c] border border-white/[0.07] rounded-2xl p-8 flex flex-col gap-6 min-w-[280px] hover:border-violet-600/30 transition-colors duration-300">
             <div className="flex flex-col gap-2">
               <p className="text-white font-bold font-serif text-lg m-0">Book a Consultation</p>

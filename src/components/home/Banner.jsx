@@ -2,10 +2,16 @@ import { ShieldCheck, Zap, Globe, Clock, Lock, BarChart2 } from "lucide-react";
 
 const pillars = [
   { icon: ShieldCheck, label: "Loom Ai" },
-  { icon: Globe,       label: "Hitari" },
-  { icon: Clock,       label: "ESG" },
-  { icon: Lock,        label: "E-Recruitement" },
-  { icon: BarChart2,   label: "Asset Register" },
+  { icon: Globe,       label: "SiteIQ" },
+  { icon: Globe,       label: "Talently" },
+  { icon: Globe,       label: "SetaSync" },
+  { icon: Globe,       label: "SiteIQ" },
+  { icon: Clock,       label: "Impact360" },
+  { icon: Globe,       label: "Grant4Me" },
+   { icon: Globe,       label: "The Feed" },
+    { icon: Globe,       label: "Bid Bridge" },
+  { icon: Lock,        label: "Approve It" },
+  { icon: BarChart2,   label: "Asset Vault" },
 ];
 
 //infinite scroll

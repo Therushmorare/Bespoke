@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-
+import PlatformProducts from "./Products";
 const features = [
   { label: "Automated risk assessments" },
   { label: "Intelligent audit workflows" },
@@ -206,6 +206,7 @@ export default function ProductsSection() {
           )}
         </div>
       </div>
+      <PlatformProducts/>
     </section>
   );
 }

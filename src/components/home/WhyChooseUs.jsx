@@ -1,5 +1,4 @@
 import { ShieldCheck, BarChart2, Eye, Database, LayoutGrid, ArrowUpRight } from "lucide-react";
-
 const reasons = [
   {
     icon: LayoutGrid,
@@ -158,9 +157,11 @@ export default function WhyChooseUs() {
               </div>
             </article>
           ))}
+          
         </div>
 
       </div>
+     
     </section>
   );
 }

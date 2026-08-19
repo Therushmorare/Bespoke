@@ -86,7 +86,7 @@ export default function PlatformProducts() {
     <section
       id="why-choose-us"
       aria-labelledby="why-heading"
-      className="px-6 py-20 lg:py-28"
+      className=" bg-[#0E0E13]  px-6 py-20 lg:py-28"
     >
       <div className="mx-auto w-full max-w-7xl ">
         <div className="grid grid-cols-1 gap-7 lg:grid-cols-2">
@@ -95,7 +95,7 @@ export default function PlatformProducts() {
               <article
                 key={`${title}-${eyebrow}`}
                 aria-label={title}
-                className="relative overflow-hidden border border-slate-200 bg-[#f7f7fb] px-7 pb-8 pt-9 shadow-sm sm:px-9 rounded-2xl"
+                className="relative overflow-hidden bg-[#16151c] border border-white/[0.07]  px-7 pb-8 pt-9 shadow-sm sm:px-9 rounded-2xl"
               >
                 {/* Purple accent line */}
                 <div className="absolute inset-x-0 top-0 h-[4px] bg-[#6757ff]" />
@@ -115,7 +115,7 @@ export default function PlatformProducts() {
                 </div>
 
                 {/* Product heading */}
-                <h3 className="m-0 text-3xl font-bold tracking-tight text-[#10142f]">
+                <h3 className="m-0 text-3xl font-bold tracking-tight text-white">
                   {title}
                 </h3>
 

@@ -95,11 +95,9 @@ export default function PlatformProducts() {
               <article
                 key={`${title}-${eyebrow}`}
                 aria-label={title}
-                className="relative overflow-hidden bg-[#16151c] border border-white/[0.07]  px-7 pb-8 pt-9 shadow-sm sm:px-9 rounded-2xl"
+                className="relative overflow-hidden bg-[#16151c] border border-white/[0.07] hover:border-violet-600/30 transition-colors duration-300 px-7 pb-8 pt-9 shadow-sm sm:px-9 rounded-2xl"
               >
-                {/* Purple accent line */}
-                <div className="absolute inset-x-0 top-0 h-[4px] bg-[#6757ff]" />
-
+            
                 {/* Icon + status */}
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <Icon
@@ -123,7 +121,7 @@ export default function PlatformProducts() {
                   {eyebrow}
                 </p>
 
-                <p className="mt-4 max-w-2xl text-[15px] leading-6 text-slate-600">
+                <p className="mt-4 max-w-2xl text-[15px] leading-6 text-white/50">
                   {description}
                 </p>
 
@@ -138,7 +136,7 @@ export default function PlatformProducts() {
                   {capabilities.map((capability) => (
                     <p
                       key={capability}
-                      className="m-0 text-sm font-medium leading-5 text-[#1c2343]"
+                      className="m-0 text-sm font-medium leading-5 text-white"
                     >
                       {capability}
                     </p>

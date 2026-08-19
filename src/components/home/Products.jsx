@@ -39,10 +39,10 @@ const reasons = [
   },
   {
     icon: Database,
-    title: "Scalable Infrastructure",
+    title: "SetaSync",
     description:
-      "Enterprise-grade digital infrastructure and cloud solutions designed to scale securely with your business growth.",
-    stat: "Enterprise-grade",
+      "A SETA funding, student and workplace-placement management platform supporting the complete student-to-organisation workflow in one connected environment.",
+    stat: "AVAILABLE",
   },
 ];
 

@@ -1,113 +1,152 @@
 import {
-  ShieldCheck,
   BarChart2,
   Eye,
   Database,
   LayoutGrid,
-  ArrowUpRight,
-  Globe
+  Globe,
 } from "lucide-react";
 
 const reasons = [
   {
     icon: LayoutGrid,
-    title: "AssetVault ",
+    title: "AssetVault",
+    eyebrow: "ASSET MANAGEMENT AND VERIFICATION",
     description:
-      "An intelligent asset management and verification platform enabling organisations to track physical assets, monitor movements, conductverification and identify anomalies.",
+      "An intelligent asset management and verification platform enabling organisations to track physical assets, monitor movements, conduct verification and identify anomalies.",
     stat: "LAUNCHING SOON",
+    capabilities: [
+      "Asset tracking",
+      "Movement monitoring",
+      "Asset verification",
+      "Anomaly identification",
+    ],
   },
   {
     icon: Globe,
     title: "Impact 360",
+    eyebrow: "ESG MANAGEMENT AND REPORTING",
     description:
       "An AI-enabled ESG management and reporting platform helping organisations define, capture, monitor and report environmental, social and governance performance.",
     stat: "IN DEVELOPMENT",
+    capabilities: [
+      "ESG data capture",
+      "Performance monitoring",
+      "Materiality management",
+      "ESG reporting",
+    ],
   },
   {
     icon: BarChart2,
-    title: "AssetVault ",
+    title: "AssetVault",
+    eyebrow: "ASSET MANAGEMENT AND VERIFICATION",
     description:
-      "An intelligent asset management and verification platform enabling organisations to track physical assets, monitor movements, conductverification and identify anomalies.",
+      "An intelligent asset management and verification platform enabling organisations to track physical assets, monitor movements, conduct verification and identify anomalies.",
     stat: "LAUNCHING SOON",
+    capabilities: [
+      "Asset registers",
+      "Verification workflows",
+      "Movement history",
+      "Exception monitoring",
+    ],
   },
   {
     icon: Eye,
     title: "Talently",
+    eyebrow: "TALENT ACQUISITION AND MANAGEMENT",
     description:
       "A smart talent acquisition and management platform that helps recruiters identify, assess and match suitable candidates with organisational opportunities.",
     stat: "AVAILABLE",
+    capabilities: [
+      "Candidate sourcing",
+      "Candidate assessment",
+      "Opportunity matching",
+      "Talent management",
+    ],
   },
   {
     icon: Database,
     title: "SetaSync",
+    eyebrow: "SETA FUNDING AND PLACEMENT MANAGEMENT",
     description:
       "A SETA funding, student and workplace-placement management platform supporting the complete student-to-organisation workflow in one connected environment.",
     stat: "AVAILABLE",
+    capabilities: [
+      "Funding-window administration",
+      "Student registration",
+      "Host-company management",
+      "Workplace placements",
+      "Agreement and document tracking",
+      "Stipend and progress monitoring",
+    ],
   },
 ];
 
 export default function PlatformProducts() {
-  const [primary, ...rest] = reasons;
-
   return (
     <section
       id="why-choose-us"
       aria-labelledby="why-heading"
-      className="relative bg-[#0E0E13] px-6 py-24 lg:py-32 overflow-hidden"
+      className="px-6 py-20 lg:py-28"
     >
-      {/*  glow */}
-      <div
-        aria-hidden="true"
-        className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-violet-700/[0.07] blur-[130px] pointer-events-none"
-      />
+      <div className="mx-auto w-full max-w-7xl ">
+        <div className="grid grid-cols-1 gap-7 lg:grid-cols-2">
+          {reasons.map(
+            ({ icon: Icon, title, eyebrow, description, stat, capabilities }) => (
+              <article
+                key={`${title}-${eyebrow}`}
+                aria-label={title}
+                className="relative overflow-hidden border border-slate-200 bg-[#f7f7fb] px-7 pb-8 pt-9 shadow-sm sm:px-9 rounded-2xl"
+              >
+                {/* Purple accent line */}
+                <div className="absolute inset-x-0 top-0 h-[4px] bg-[#6757ff]" />
 
-      <div className="relative max-w-7xl mx-auto w-full">
-        {/* Remaining cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {rest.map(({ icon: Icon, title, description, stat }) => (
-            <article
-              key={title}
-              aria-label={title}
-              className="group bg-[#16151c] border border-white/[0.07] rounded-2xl p-6 flex flex-col gap-5 hover:border-violet-600/30 transition-colors duration-300 overflow-hidden relative"
-            >
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.08), transparent 70%)",
-                }}
-              />
-
-              <div className="relative flex flex-col gap-5 flex-1">
-                <div
-                  className="w-10 h-10 rounded-xl bg-violet-600/15 border border-violet-500/20 flex items-center justify-center"
-                  aria-hidden="true"
-                >
+                {/* Icon + status */}
+                <div className="mb-4 flex items-start justify-between gap-4">
                   <Icon
-                    size={20}
-                    className="text-violet-400"
-                    strokeWidth={1.75}
+                    size={29}
+                    strokeWidth={1.7}
+                    className="text-[#6757ff]"
+                    aria-hidden="true"
                   />
-                </div>
 
-                <div className="flex flex-col gap-2 flex-1">
-                  <h3 className="text-white font-bold text-sm font-serif m-0 leading-snug">
-                    {title}
-                  </h3>
-                  <p className="text-white/50 text-sm leading-relaxed m-0">
-                    {description}
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-white/[0.06]">
-                  <span className="text-violet-400/70 text-xs font-semibold tracking-[0.15em] uppercase">
+                  <span className="bg-emerald-50 px-3 py-1 text-[10px] font-semibold tracking-[0.14em] text-emerald-700">
                     {stat}
                   </span>
                 </div>
-              </div>
-            </article>
-          ))}
+
+                {/* Product heading */}
+                <h3 className="m-0 text-3xl font-bold tracking-tight text-[#10142f]">
+                  {title}
+                </h3>
+
+                <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#6757ff]">
+                  {eyebrow}
+                </p>
+
+                <p className="mt-4 max-w-2xl text-[15px] leading-6 text-slate-600">
+                  {description}
+                </p>
+
+                <div className="my-6 h-px bg-slate-200" />
+
+                {/* Capabilities */}
+                <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-400">
+                  Key Capabilities
+                </p>
+
+                <div className="grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-2">
+                  {capabilities.map((capability) => (
+                    <p
+                      key={capability}
+                      className="m-0 text-sm font-medium leading-5 text-[#1c2343]"
+                    >
+                      {capability}
+                    </p>
+                  ))}
+                </div>
+              </article>
+            )
+          )}
         </div>
       </div>
     </section>

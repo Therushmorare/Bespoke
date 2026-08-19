@@ -32,10 +32,10 @@ const reasons = [
   },
   {
     icon: Eye,
-    title: "Transparent Governance",
+    title: "Talently",
     description:
-      "Clear reporting and governance structures that keep stakeholders fully informed and confident in operational decisions.",
-    stat: "Full visibility",
+      "A smart talent acquisition and management platform that helps recruiters identify, assess and match suitable candidates with organisational opportunities.",
+    stat: "AVAILABLE",
   },
   {
     icon: Database,

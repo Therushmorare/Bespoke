@@ -5,7 +5,6 @@ const JSONLD_ID = "bespoke-localbusiness-jsonld";
 
 export default function ContactHomeSection() {
   const [form, setForm] = useState({ name: "", company: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     if (document.getElementById(JSONLD_ID)) return;
@@ -43,11 +42,6 @@ export default function ContactHomeSection() {
   }, []);
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   return (
     <section
@@ -132,20 +126,14 @@ export default function ContactHomeSection() {
 
           {/* contact form */}
           <div className="bg-[#16151c] border border-white/[0.07] rounded-2xl p-7">
-            {submitted ? (
-              <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
-                <div className="w-12 h-12 rounded-full bg-violet-900/50 flex items-center justify-center">
-                  <Mail size={22} className="text-violet-400" />
-                </div>
-                <h3 className="text-white font-semibold text-lg m-0">Message sent!</h3>
-                <p className="text-white/50 text-sm m-0">We'll be in touch shortly.</p>
-              </div>
-            ) : (
               <form
-                onSubmit={handleSubmit}
+                action="https://formsubmit.co/sales@bespokesolutech.co.za"
+                method="POST"
                 aria-label="Contact form"
                 className="flex flex-col gap-4"
               >
+                <input type="hidden" name="_subject" value="New enquiry Bespoke Solutech website" />
+                <input type="hidden" name="_template" value="table" />
                 {[
                   { id: "name", name: "name", type: "text", placeholder: "Your Name", required: true },
                   { id: "company", name: "company", type: "text", placeholder: "Company", required: false },
@@ -188,7 +176,6 @@ export default function ContactHomeSection() {
                   Send Message
                 </button>
               </form>
-            )}
           </div>
 
         </div>
